@@ -1,0 +1,26 @@
+{
+  "pairs": {
+    "O_C": {
+      "letters": [
+        "O",
+        "C"
+      ],
+      "accuracy": 1.0
+    },
+    "E_S": {
+      "letters": [
+        "E",
+        "S"
+      ],
+      "accuracy": 1.0
+    },
+    "N_M": {
+      "letters": [
+        "N",
+        "M"
+      ],
+      "accuracy": 0.9833333333333333
+    }
+  },
+  "usage": "Use these classifiers to correct O/C, E/S, N/M confusion"
+}

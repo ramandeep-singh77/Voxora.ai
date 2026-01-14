@@ -1,0 +1,10 @@
+{
+  "A": {
+    "samples": 5,
+    "correct": 5,
+    "accuracy": 100.0,
+    "predictions": [
+      {
+        "expected": "A",
+        "predicted": "A",
+        "confidence": 

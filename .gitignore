@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Custom Dataset (Private - Do Not Push)
+my_custom_dataset/
+
+# Model files (large files)
+models/*.h5
+models/*.keras
+models/*.pb
+
+# Processed data
+processed_data/*.npy
+processed_data/*.pkl
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Training outputs
+training_history.png
+*.png
+
+# Audio files
+*.mp3
+*.wav
+
+# Sign animations (if generated)
+sign_animations/*.mp4
+sign_animations/*.gif
+
+# API keys (if stored separately)
+.env
+secrets.py
