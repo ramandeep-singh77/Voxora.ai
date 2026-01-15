@@ -74,3 +74,11 @@ sign_animations/*.gif
 # API keys (if stored separately)
 .env
 secrets.py
+
+# Vercel
+.vercel
+ASL-Hand-sign-language-translator--main/dist
+ASL-Hand-sign-language-translator--main/.vercel
+
+# Custom Dataset (Private)
+my_custom_dataset/
