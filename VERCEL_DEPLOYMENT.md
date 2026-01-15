@@ -19,10 +19,11 @@ npm install -g vercel
 3. Click "Add New Project"
 4. Import: `ramandeep-singh77/Voxora.ai`
 5. Configure:
-   - **Framework Preset:** Vite
-   - **Root Directory:** `ASL-Hand-sign-language-translator--main`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
+   - **Framework Preset:** Other
+   - **Root Directory:** Leave as `.` (root)
+   - **Build Command:** `cd ASL-Hand-sign-language-translator--main && npm install && npm run build`
+   - **Output Directory:** `ASL-Hand-sign-language-translator--main/dist`
+   - **Install Command:** `echo 'Skip'`
 6. Click "Deploy"
 
 ### 3. What Will Work on Vercel
