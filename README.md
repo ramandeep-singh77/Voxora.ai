@@ -23,32 +23,38 @@ Voxora.AI is an intelligent sign language recognition system that bridges commun
 
 ## 🚀 Quick Start
 
-### Installation
+> **⚠️ IMPORTANT**: The trained model file is required but not included in the repository due to size (45MB). Use the setup scripts below to download it automatically.
+
+### Option 1: Automatic Setup (Recommended)
 
 ```bash
-# Install Python dependencies
-pip install -r requirements.txt
+# Clone repository
+git clone https://github.com/ramandeep-singh77/Voxora.ai.git
+cd Voxora.ai
 
-# Install Node.js dependencies
-cd ASL-Hand-sign-language-translator--main
-npm install
-cd ..
+# One-click setup (downloads model + installs dependencies)
+python setup.py
+
+# Start application
+quick_start.bat  # Windows
+# or ./start.sh   # Linux/Mac
 ```
 
-### Start Application
+### Option 2: Manual Setup
 
-```bash
-# Double-click or run:
-start.bat
-
-# Or manually:
-# Terminal 1: python web_app.py
-# Terminal 2: cd ASL-Hand-sign-language-translator--main && npm run dev
-```
+See detailed instructions: **[INSTALLATION.md](INSTALLATION.md)**
 
 ### Open Browser
 
 Navigate to: **http://localhost:3000**
+
+### ⚠️ Model Required
+
+The trained model (`signity_model.h5`) is required to run the application. It's automatically downloaded by the setup scripts above, or you can:
+
+1. **Download manually**: Go to [Releases](https://github.com/ramandeep-singh77/Voxora.ai/releases) → Download `signity_model.h5`
+2. **Place in**: `models/signity_model.h5`
+3. **Verify setup**: Run `python check_setup.py`
 
 ### Usage
 
@@ -119,7 +125,7 @@ voxora-ai/
 │
 ├── 🧠 Models & Data
 │   ├── models/
-│   │   └── signity_model.h5            # Trained model (96-99% accuracy)
+│   │   └── signity_model.h5            # Trained model (96-99% accuracy) [DOWNLOAD REQUIRED]
 │   ├── my_custom_dataset/              # Custom training data (28K samples)
 │   ├── processed_data/                 # Processed features
 │   └── confusion_correction/           # Confusion fix classifiers
@@ -131,7 +137,12 @@ voxora-ai/
 │   └── model_training.py               # Training utilities
 │
 └── 🎬 Quick Start
-    └── start.bat                       # Start application
+    ├── setup.py                        # One-click setup script
+    ├── download_model.py               # Model downloader
+    ├── check_setup.py                  # Setup verification
+    ├── quick_start.bat                 # Windows quick start
+    ├── start.bat                       # Start application
+    └── INSTALLATION.md                 # Detailed setup guide
 ```
 
 ---
@@ -190,6 +201,47 @@ WINDOW_HEIGHT = 480
 - **Delete Letter** - Remove last letter
 - **Correct & Show** - AI-powered correction
 - **Reset All** - Clear everything
+
+---
+
+## 🔧 Troubleshooting
+
+### Model Missing Error
+
+If you get "Model not found" error:
+
+```bash
+# Download the model
+python download_model.py
+
+# Or manually download from:
+# https://github.com/ramandeep-singh77/Voxora.ai/releases
+# Place in: models/signity_model.h5
+```
+
+### Camera Not Working
+
+- Allow camera permissions in browser
+- Check if camera is being used by another app
+- Try refreshing the page
+
+### Dependencies Issues
+
+```bash
+# Update pip and try again
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# For Node.js issues
+cd ASL-Hand-sign-language-translator--main
+npm install --force
+```
+
+### Performance Issues
+
+- Close other applications using camera
+- Use Chrome/Edge for better performance
+- Ensure good lighting for hand detection
 
 ---
 
