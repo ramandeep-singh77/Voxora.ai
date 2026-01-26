@@ -4,15 +4,39 @@ Real-time hand detection and landmark extraction using MediaPipe
 """
 
 import cv2
-import mediapipe as mp
 import numpy as np
 from config import *
 
+# Handle MediaPipe import compatibility
+try:
+    import mediapipe as mp
+    # Try old MediaPipe structure first
+    mp_hands = mp.solutions.hands
+    mp_drawing = mp.solutions.drawing_utils
+    mp_drawing_styles = mp.solutions.drawing_styles
+except AttributeError:
+    # Handle newer MediaPipe versions
+    try:
+        import mediapipe.tasks.python.vision.hand_landmarker as mp_hands
+        import mediapipe.python.solutions.drawing_utils as mp_drawing
+        import mediapipe.python.solutions.drawing_styles as mp_drawing_styles
+    except ImportError:
+        # Fallback - install correct MediaPipe version
+        print("❌ MediaPipe compatibility issue detected!")
+        print("🔧 Installing compatible MediaPipe version...")
+        import subprocess
+        import sys
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "mediapipe==0.10.9"])
+        import mediapipe as mp
+        mp_hands = mp.solutions.hands
+        mp_drawing = mp.solutions.drawing_utils
+        mp_drawing_styles = mp.solutions.drawing_styles
+
 class HandDetector:
     def __init__(self):
-        self.mp_hands = mp.solutions.hands
-        self.mp_drawing = mp.solutions.drawing_utils
-        self.mp_drawing_styles = mp.solutions.drawing_styles
+        self.mp_hands = mp_hands
+        self.mp_drawing = mp_drawing
+        self.mp_drawing_styles = mp_drawing_styles
         
         # Initialize hands on first use to avoid handle issues
         self.hands = None

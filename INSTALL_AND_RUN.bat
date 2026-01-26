@@ -71,7 +71,8 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo Installing MediaPipe...
-python -m pip install mediapipe
+python -m pip uninstall mediapipe -y >nul 2>&1
+python -m pip install mediapipe==0.10.9
 if %ERRORLEVEL% NEQ 0 (
     echo WARNING: MediaPipe installation failed, but continuing...
 )
