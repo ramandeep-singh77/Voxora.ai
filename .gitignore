@@ -38,10 +38,10 @@ env/
 # Custom Dataset (Private - Do Not Push)
 my_custom_dataset/
 
-# Model files (large files)
-models/*.h5
-models/*.keras
-models/*.pb
+# Model files (large files) - REMOVED TO INCLUDE MODEL IN REPO
+# models/*.h5
+# models/*.keras
+# models/*.pb
 
 # Processed data
 processed_data/*.npy

@@ -48,24 +48,8 @@ def load_model():
     global model, class_mapping
     
     model_path = os.path.join('models', 'signity_model.h5')
-    
-    if not os.path.exists(model_path):
-        print(f"\n❌ ERROR: Model file not found!")
-        print(f"   Expected location: {model_path}")
-        print(f"\n📥 To fix this issue:")
-        print(f"   1. Run: python download_model.py")
-        print(f"   2. Or download manually from:")
-        print(f"      https://github.com/ramandeep-singh77/Voxora.ai/releases")
-        print(f"   3. Place the file in: models/signity_model.h5")
-        print(f"\n⚠️  Cannot start without the trained model.")
-        raise FileNotFoundError(f"Model file not found: {model_path}")
-    
-    try:
-        model = keras.models.load_model(model_path)
-        print(f"✅ Model loaded from: {model_path}")
-    except Exception as e:
-        print(f"❌ Error loading model: {e}")
-        raise
+    model = keras.models.load_model(model_path)
+    print(f"✅ Model loaded: {model_path}")
     
     # Load class mapping
     mapping_path = os.path.join('processed_data', 'class_mapping.json')
@@ -79,7 +63,6 @@ def load_model():
                   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
                   'del', 'nothing', 'space']
         class_mapping = {str(i): classes[i] for i in range(len(classes))}
-        print("⚠️  Using default class mapping")
 
 def predict_sign(landmarks):
     """Predict sign from landmarks"""
