@@ -121,10 +121,68 @@ function App() {
               <strong>UI DEMO ONLY</strong> - This is a frontend showcase. 
               For full functionality with camera and AI recognition, 
               <a href="https://github.com/ramandeep-singh77/Voxora.ai" target="_blank" rel="noopener noreferrer"> install from GitHub</a> or 
-              <a href="#demo-video"> watch our demo video</a>.
+              <a href="#demo-video"> watch our demo video below</a>.
             </div>
           </div>
         </div>
+      )}
+
+      {/* Demo Video Section - Only on Vercel */}
+      {isProduction && (
+        <section className="demo-video-section" id="demo-video">
+          <div className="demo-video-container">
+            <div className="demo-video-header">
+              <h2>🎬 Demo Video - See Voxora.AI in Action!</h2>
+              <p className="demo-subtitle">Watch how the full AI model recognizes sign language in real-time</p>
+            </div>
+            <div className="video-embed-wrapper">
+              <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/cvyST-QWqhw"
+                title="Voxora.AI - Real-time Sign Language Recognition Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="demo-video-iframe"
+              ></iframe>
+            </div>
+            <div className="demo-video-info">
+              <div className="demo-highlights">
+                <h3>🌟 What You'll See in the Demo:</h3>
+                <ul>
+                  <li>✅ Real-time ASL sign recognition (96-99% accuracy)</li>
+                  <li>✅ Automatic word and sentence formation</li>
+                  <li>✅ AI-powered grammar correction with GPT-4</li>
+                  <li>✅ 28 signs supported (A-Z, space, delete)</li>
+                  <li>✅ Smooth 25-30 FPS performance</li>
+                </ul>
+              </div>
+              <div className="demo-cta">
+                <h3>🚀 Ready to Try the Full Version?</h3>
+                <p>This demo shows the complete AI model in action. Install locally to experience the full functionality!</p>
+                <div className="demo-buttons">
+                  <a 
+                    href="https://github.com/ramandeep-singh77/Voxora.ai" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="demo-btn primary"
+                  >
+                    📦 Download from GitHub
+                  </a>
+                  <a 
+                    href="https://youtu.be/cvyST-QWqhw" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="demo-btn secondary"
+                  >
+                    🎥 Watch on YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Header */}

@@ -4,6 +4,12 @@
 
 Transform ASL signs into text and speech instantly using AI and computer vision.
 
+## 🎬 Demo Video
+
+**🎥 [Watch Voxora.AI in Action!](https://youtu.be/cvyST-QWqhw)**
+
+See the complete AI model recognizing sign language in real-time with 96-99% accuracy, automatic sentence formation, and GPT-4 powered corrections.
+
 ---
 
 ## 🚀 Quick Start (Super Simple!)
