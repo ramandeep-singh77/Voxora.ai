@@ -8,25 +8,32 @@ Transform ASL signs into text and speech instantly using AI and computer vision.
 
 ## 🚀 Quick Start (Super Simple!)
 
-### Option 1: Download & Run (Easiest)
+### Option 1: Windows Users (Easiest)
 1. **Download**: Click "Code" → "Download ZIP" 
 2. **Extract**: Unzip the downloaded file
-3. **Run**: Double-click `RUN.bat` (Windows) or run `python run.py`
+3. **Run**: Double-click `RUN.bat`
 4. **Open**: Browser opens automatically at http://localhost:3000
 
-### Option 2: Git Clone
+### Option 2: All Platforms
 ```bash
 git clone https://github.com/ramandeep-singh77/Voxora.ai.git
 cd Voxora.ai
-python run.py
+python start_simple.py
 ```
 
-### Option 3: If You Have Dependencies Already
+### Option 3: Advanced Users
 ```bash
-python run_simple.py  # Skips dependency installation
+python run.py  # Full launcher with dependency management
 ```
 
 **That's it! No complex setup needed.** 🎉
+
+### ✅ What Happens Automatically
+- Kills any conflicting processes on ports 3000/5000
+- Starts Flask backend (AI model + API)
+- Starts React frontend (beautiful UI)
+- Opens browser to http://localhost:3000
+- Ready to use in 30 seconds!
 
 ---
 
@@ -88,9 +95,9 @@ python run_simple.py  # Skips dependency installation
 
 ```
 Voxora.ai/
-├── 🚀 run.py                          # One-click launcher (with dependency install)
-├── 🚀 run_simple.py                   # Simple launcher (no dependency install)
-├── 🚀 RUN.bat                         # Windows launcher
+├── 🚀 start_simple.py                 # Super simple launcher (RECOMMENDED)
+├── 🚀 run.py                          # Advanced launcher with dependency management
+├── 🚀 RUN.bat                         # Windows double-click launcher
 ├── 🌐 web_app.py                      # Flask backend
 ├── 👋 hand_detector.py                # Hand detection
 ├── 🧠 models/signity_model.h5         # Trained AI model
