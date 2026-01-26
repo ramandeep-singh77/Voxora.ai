@@ -8,20 +8,27 @@ Transform ASL signs into text and speech instantly using AI and computer vision.
 
 ## 🚀 Quick Start (Super Simple!)
 
-### Option 1: Windows Users (Easiest)
+### Option 1: EXE Launcher (No Python Required!)
+1. **Download**: [VoxoraAI_Complete_Package.zip](https://github.com/ramandeep-singh77/Voxora.ai/releases) 
+2. **Extract**: Unzip anywhere on your computer
+3. **Run**: Double-click `VoxoraAI_Launcher.exe`
+4. **Start**: Click "🚀 Start Voxora.AI" in the GUI
+5. **Ready**: Browser opens automatically at http://localhost:3000
+
+### Option 2: Windows Users (Python Required)
 1. **Download**: Click "Code" → "Download ZIP" 
 2. **Extract**: Unzip the downloaded file
 3. **Run**: Double-click `RUN.bat`
 4. **Open**: Browser opens automatically at http://localhost:3000
 
-### Option 2: All Platforms
+### Option 3: All Platforms (Python Required)
 ```bash
 git clone https://github.com/ramandeep-singh77/Voxora.ai.git
 cd Voxora.ai
 python start_simple.py
 ```
 
-### Option 3: Advanced Users
+### Option 4: Advanced Users
 ```bash
 python run.py  # Full launcher with dependency management
 ```
@@ -62,6 +69,11 @@ python run.py  # Full launcher with dependency management
 
 ## 📋 Requirements
 
+### For EXE Launcher (Easiest - No Python Required!)
+- **Node.js 16+** - [Download Node.js](https://nodejs.org) (for React UI)
+- **Webcam** - Required for sign recognition
+
+### For Python Scripts
 - **Python 3.8+** - [Download Python](https://python.org/downloads)
 - **Node.js 16+** - [Download Node.js](https://nodejs.org)
 - **Webcam** - Required for sign recognition
@@ -95,8 +107,9 @@ python run.py  # Full launcher with dependency management
 
 ```
 Voxora.ai/
-├── 🚀 start_simple.py                 # Super simple launcher (RECOMMENDED)
-├── 🚀 run.py                          # Advanced launcher with dependency management
+├── 🚀 VoxoraAI_Launcher.exe           # GUI launcher (NO PYTHON REQUIRED!)
+├── 🚀 start_simple.py                 # Super simple launcher
+├── 🚀 run.py                          # Advanced launcher 
 ├── 🚀 RUN.bat                         # Windows double-click launcher
 ├── 🌐 web_app.py                      # Flask backend
 ├── 👋 hand_detector.py                # Hand detection
