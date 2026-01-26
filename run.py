@@ -14,27 +14,46 @@ from pathlib import Path
 
 def install_dependencies():
     """Install required dependencies"""
-    print("📦 Installing dependencies...")
+    print("📦 Checking dependencies...")
     
-    # Install Python dependencies
+    # Check if key packages are already installed
     try:
-        subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], 
-                      check=True, capture_output=True)
-        print("✅ Python dependencies installed")
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Failed to install Python dependencies: {e}")
-        return False
+        import flask, cv2, tensorflow, numpy, mediapipe
+        print("✅ Python dependencies already installed")
+        python_deps_ok = True
+    except ImportError:
+        python_deps_ok = False
+    
+    # Install Python dependencies if needed
+    if not python_deps_ok:
+        print("📦 Installing Python dependencies...")
+        try:
+            result = subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], 
+                                  check=True, capture_output=True, text=True)
+            print("✅ Python dependencies installed")
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Failed to install Python dependencies:")
+            print(f"   Error: {e.stderr}")
+            print(f"   Try running manually: pip install -r requirements.txt")
+            return False
     
     # Install Node.js dependencies
     react_dir = Path("ASL-Hand-sign-language-translator--main")
-    if react_dir.exists():
-        try:
-            subprocess.run(["npm", "install"], cwd=react_dir, check=True, capture_output=True)
-            print("✅ Node.js dependencies installed")
-        except subprocess.CalledProcessError as e:
-            print(f"❌ Failed to install Node.js dependencies: {e}")
-            print("   Make sure Node.js is installed: https://nodejs.org")
-            return False
+    node_modules = react_dir / "node_modules"
+    
+    if node_modules.exists():
+        print("✅ Node.js dependencies already installed")
+    else:
+        print("📦 Installing Node.js dependencies...")
+        if react_dir.exists():
+            try:
+                result = subprocess.run(["npm", "install"], cwd=react_dir, check=True, capture_output=True, text=True)
+                print("✅ Node.js dependencies installed")
+            except subprocess.CalledProcessError as e:
+                print(f"❌ Failed to install Node.js dependencies:")
+                print(f"   Error: {e.stderr}")
+                print("   Make sure Node.js is installed: https://nodejs.org")
+                return False
     
     return True
 

@@ -21,6 +21,11 @@ cd Voxora.ai
 python run.py
 ```
 
+### Option 3: If You Have Dependencies Already
+```bash
+python run_simple.py  # Skips dependency installation
+```
+
 **That's it! No complex setup needed.** 🎉
 
 ---
@@ -83,7 +88,8 @@ python run.py
 
 ```
 Voxora.ai/
-├── 🚀 run.py                          # One-click launcher
+├── 🚀 run.py                          # One-click launcher (with dependency install)
+├── 🚀 run_simple.py                   # Simple launcher (no dependency install)
 ├── 🚀 RUN.bat                         # Windows launcher
 ├── 🌐 web_app.py                      # Flask backend
 ├── 👋 hand_detector.py                # Hand detection
